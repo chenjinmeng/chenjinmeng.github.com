@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin: 0px; padding: 0px; list-style: none;}
+	body{ background: url(../img/loading_bg.jpg) no-repeat; background-size: cover;}
+	#div1{ width: 300px; height: 200px; background: url(../img/load.png) no-repeat; position: absolute; left:50%; margin-left: -150px; top: 50%; margin-top: -100px; cursor: pointer;}
+	#div1 div.left{ width: 300px; height: 200px; position: absolute; left: 0px; top: 0px;}
+	#div1 div.right{ width: 300px; height: 200px; position: absolute; left: 0px; top: 0px;}
+</style>
+</head>
+
+<body>
+<div id="div1">
+	<div class="left"><img src="../img/load_left.png"></div>
+    <div class="right"><img src="../img/load_right.png"></div>
+</div>
+</body>
+<script src="../js/move.js"></script>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		var oLeft=oDiv.getElementsByTagName('div')[0];
+		var oRight=oDiv.getElementsByTagName('div')[1];
+		
+		oDiv.onclick=function(){
+			//file:///F:/%E6%99%BA%E8%83%BD%E7%A4%BE/text/loading2.html
+			window.location='about_name.html';
+		}
+		
+		var arr=[
+			{top:-20},
+			{top:0},
+			{top:20},
+			{top:0}
+		]		
+		var arr2=[
+			{top:20},
+			{top:0},
+			{top:-20},
+			{top:0}
+		]		
+		var now=0;
+		var now2=0;
+		next();
+		function next(){
+			move(oLeft,arr[now],{type:'linear',fn:function(){
+				now++;
+				if(now==arr.length){
+					now=0;
+				}
+				next();
+			}})	
+		}
+		
+		prev();
+		function prev(){
+			move(oRight,arr2[now2],{type:'linear',fn:function(){
+				now2++;
+				if(now2==arr2.length){
+					now2=0;
+				}
+				prev();
+			}})	
+		}
+		
+		
+	}
+</script>
+</html>

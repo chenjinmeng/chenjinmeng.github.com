@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin: 0px; padding: 0px; list-style: none; border:none;}
+	body{ background: url(../img/bg.jpg) no-repeat; background-size: cover; background-attachment: fixed; width: 100%; height: auto;}
+	#nav{ position: fixed; left: 0px; top: 0px; width: 164px; height: 100%; border-right: 1px solid #383838; text-align: center; padding-top: 35px;}
+	#nav div.nav_cur{ width: 100%; margin-top:50px;}
+	#nav div.nav_cur h2{ width: 100%;}
+	#nav div.nav_cur h2 a{text-decoration: none; color: #f2f2f2; font-family: Segoe UI; font-size: 1.1em; font-weight:normal;}
+	#nav div.nav_cur ul{ width: 100%;}
+	#nav div.nav_cur ul li{ width: 100%; margin-bottom: 2px; position: relative; height: 23px;}
+	#nav div.nav_cur ul li span{ display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF; position: absolute; right: 20px; top: 11px; display: none;}
+	#nav div.nav_cur ul li.active a{color:#e30000;}
+	#nav div.nav_cur ul li.active span{ display: block;}
+	#nav div.nav_cur ul li a{ text-decoration: none; color: #6e8e8c; font-family: Segoe UI; font-size: 1.1em;}
+	#nav div.nav_cur ul li a:hover{ text-decoration: underline;}
+	#nav div.nav_blur{ width: 100%; margin-top: 38px; margin-bottom: 40px;}
+	#nav div.nav_blur ul{}
+	#nav div.nav_blur ul li{ margin-bottom: 5px;}
+	#nav div.nav_blur ul li a{ text-decoration: none; color: #f2f2f2; font-family: Segoe UI; font-size: 1.3em;}
+	#nav div.nav_blur ul li a:hover{ color: #e30000;}
+	#nav p{color: #f2f2f2; font-family: Segoe UI; font-size: 0.8em; margin-top: 10px;}
+	#nav div.nav_contact{ width: 100%; margin-top: 35px;}
+	#nav div.nav_contact ul{}
+	#nav div.nav_contact ul li{ float: left; margin-left: 20px; cursor: pointer; width: 26px; height: 26px;}
+	#nav div.nav_contact ul li.first{ background: url(../img/face.png) no-repeat;}
+	#nav div.nav_contact ul li.first:hover{ background: url(../img/face_active.png) no-repeat;}
+	#nav div.nav_contact ul li.second{ background: url(../img/tum.png) no-repeat;}
+	#nav div.nav_contact ul li.second:hover{ background: url(../img/tum_active.png) no-repeat;}
+	#nav div.nav_contact ul li.third{ background: url(../img/twi.png) no-repeat;}
+	#nav div.nav_contact ul li.third:hover{ background: url(../img/twi_active.png) no-repeat;}
+	#right{ width: 700px; margin-left: 245px; margin-top: 90px;}
+	#right div.right_point{ width: 15px; height:5px; background: #FFFFFF; margin-bottom: 60px;}
+	#right h3{ font-size: 4em; font-family:  "Arial"; color: #ffffff; font-weight: lighter;}
+	#right p{ color: #6e8e8c; width: 600px; font-size: 1em; font-family: Segoe UI; margin-top: 25px;}
+	#right h2{ color: #ffffff; font-family: "Arial"; font-weight: lighter; font-size: 1.4em; margin-top: 30px;}
+	#right div.right_table{ width: 580px; height: 200px; background: url(../img/table.png) no-repeat; position: relative; margin-top: 10px; overflow: hidden;}
+	#right #right_first{ position: absolute; left:248px; top: 142px; opacity: 0; filter:alpha(opacity=0)}
+	#right #right_second{ position: absolute; left:237px; top: -112px;}
+	#right #right_third{ position: absolute; left:237px; top:-68px;}
+	#right #right_forth{ position: absolute; left:-213px; top: -27px;}
+	#right #right_fifth{ position: absolute; left:-209px; top: -57px;}
+	#right #right_sixth{ position: absolute; left:-209px; top: -97px;}
+	#right #right_seventh{ position: absolute; left:-220px; top: -132px;}
+	#right #right_eighth{ position: absolute; left:652px; top: -27px;}
+	#right #right_ninth{ position: absolute; left:680px; top: -57px;}
+	#right #right_tenth{ position: absolute; left:680px; top: -97px;}
+	#right #right_eleventh{ position: absolute; left:610px; top: -132px;}
+	#backToTop{ background: url(../img/top.png) no-repeat; width: 37px; height: 64px; position: fixed; left: 900px; bottom: 50px; cursor: pointer;}
+	#backToTop:hover{ background: url(../img/top_hover.png) no-repeat;}
+</style>
+</head>
+
+<body>
+	<div id="nav">
+    	<img src="../img/logo.png">
+        <div class="nav_cur">
+        	<h2><a href="javascript:;">about</a></h2>
+            <ul>
+            	<li class="active"><a href="javascript:;">name</a><span></span></li>
+            	<li><a href="about_education.html">education</a><span></span></li>
+            	<li><a href="about_award.html">awards</a><span></span></li>
+            	<li><a href="about_introduce.html">introduce</a><span></span></li>
+            </ul>
+        </div>
+        <div class="nav_blur">
+        	<ul>
+            	<li><a href="javascript:;">works</a></li>
+            	<li><a href="javascript:;">skills</a></li>
+            	<li><a href="javascript:;">contact me</a></li>
+            </ul>
+        </div>
+        <p><span><img src="../img/phone.png"></span>:13701756015</p>
+        <p><span><img src="../img/email.png"></span>:649593185@qq.com</p>
+        <div class="nav_contact">
+        	<ul>
+            	<li class="first"></li>
+            	<li class="second"></li>
+            	<li class="third"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+    	<div class="right_point"></div>
+        <h3>NAME</h3>
+        <p>Respect of the interviewer: hello, my name is Chen jin meng, this year 24 years old, from jiangsu yancheng, everyone can see my inner like my appearance, and gentle, and is of my own best summarized. I don't float, float, not rashness not lazy. My heart full, material pleasures and spiritual stimulation is not my hobby. I treat people honestly, no rhetoric, but sincere and honest that I can always win the trust of friends. I professional solid, reading is my greatest enjoyment, computer makes me feel great pleasure</p>
+        <h2>INTEREST</h2>
+        <div class="right_table">
+        	<div id="right_first"><img src="../img/b1.png"></div>
+        	<div id="right_second"><img src="../img/b2.png"></div>
+        	<div id="right_third"><img src="../img/b3.png"></div>
+        	<div id="right_forth"><img src="../img/b4.png"></div>
+        	<div id="right_fifth"><img src="../img/b5.png"></div>
+        	<div id="right_sixth"><img src="../img/b6.png"></div>
+        	<div id="right_seventh"><img src="../img/b7.png"></div>
+        	<div id="right_eighth"><img src="../img/b8.png"></div>
+        	<div id="right_ninth"><img src="../img/b9.png"></div>
+        	<div id="right_tenth"><img src="../img/b10.png"></div>
+        	<div id="right_eleventh"><img src="../img/b11.png"></div>
+        </div>
+        <p>General boys and I almost, I like playing basketball, reading, learning, occasionally go to travel, see the outside world, look at the people and things outside, is the so-called stand high, can see farther, I hope I can go to the later more and more people and things, to enrich their own lives and their own ideas. I think life is a process of growth, in fact, I'm standing here is a growth. If a person's life must constituted by various choices, then I'm grow up along with these choices.</p>
+        <h2>ASSESSMENT</h2>
+        <p style=" margin-bottom: 40px;">I don't float, float, not rashness, not lazy. My heart full, material pleasures and spiritual stimulation is not my hobby. I treat people honestly, no rhetoric, but sincere and honest that I can always win the trust of friends. I professional solid, reading is my greatest enjoyment, computer makes me feel great pleasure. I work steadfast, even a small thing I also want to meticulously finish. I can fix the computer, can pipe network, network management and online sales. It is important that I have a persistent study spirit, a kind of don't understand will not relent until neck first.</p>
+        <div>
+        	<img>
+        </div>
+        <div id="backToTop"></div>
+    </div>
+</body>
+<script src="../js/move2.js"></script>
+<script>
+	window.onload=function(){
+		var oRightFirst=document.getElementById('right_first');
+		var oRightSecond=document.getElementById('right_second');
+		var oRightThird=document.getElementById('right_third');
+		var oRightForth=document.getElementById('right_forth');
+		var oRightFifth=document.getElementById('right_fifth');
+		var oRightSixth=document.getElementById('right_sixth');
+		var oRightSeventh=document.getElementById('right_seventh');
+		var oRightEighth=document.getElementById('right_eighth');
+		var oRightNinth=document.getElementById('right_ninth');
+		var oRightTenth=document.getElementById('right_tenth');
+		var oRightEleventh=document.getElementById('right_eleventh');
+		var oBackToTop=document.getElementById('backToTop');
+		
+/*	#right #right_first{ position: absolute; left:248px; top: 142px;}
+	#right #right_second{ position: absolute; left:237px; top: 112px;}
+	#right #right_third{ position: absolute; left:237px; top: 68px;}
+	#right #right_forth{ position: absolute; left:213px; top: 27px;}
+	#right #right_fifth{ position: absolute; left:209px; top: 57px;}
+	#right #right_sixth{ position: absolute; left:209px; top: 97px;}
+	#right #right_seventh{ position: absolute; left:220px; top: 132px;}
+	#right #right_eighth{ position: absolute; left:326px; top: 27px;}
+	#right #right_ninth{ position: absolute; left:343px; top: 57px;}
+	#right #right_tenth{ position: absolute; left:328px; top: 97px;}
+	#right #right_eleventh{ position: absolute; left:305px; top: 132px;}
+*/		
+		next();
+		function next(){
+			move(oRightFirst,{opacity:1},{complete:function(){
+				move(oRightSecond,{top:112},{complete:function(){
+					move(oRightThird,{top:68},{complete:function(){
+						move(oRightForth,{left:213,top:27},{complete:function(){
+							move(right_fifth,{left:209,top:57},{complete:function(){
+								move(right_sixth,{left:209,top:97},{complete:function(){
+									move(right_seventh,{left:220,top:132},{complete:function(){
+										move(right_eighth,{left:326,top:27},{complete:function(){
+											move(right_ninth,{left:343,top:57},{complete:function(){
+												move(right_tenth,{left:328,top:97},{complete:function(){
+													move(right_eleventh,{left:305,top:132},{complete:function(){}});
+												}});
+											}});
+										}});
+									}});
+								}});
+							}});
+						}});	
+					}});
+				}});
+			}});	
+		}
+		
+		
+		oBackToTop.onclick=function(){
+			backToTop(0,1000)	
+		}
+		function backToTop(iTarget,time){
+			var start=document.documentElement.scrollTop || document.body.scrollTop;
+			var dis=iTarget-start;
+			var count=Math.round(time/30);
+			var n=0;
+			var timer=setInterval(function(){
+				n++;
+				
+				var a=1-n/count;
+				var cur=start+dis*(1-a*a*a);
+				document.documentElement.scrollTop=cur;
+				document.body.scrollTop=cur;
+				if(n==count){
+					clearInterval(timer);
+				}	
+			},30)
+		}
+		
+		
+		
+	}
+</script>
+</html>

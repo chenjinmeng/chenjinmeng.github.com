@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{ margin: 0px; padding: 0px; list-style: none; border:none;}
+	body{ background: #fff; width: 100%; height: auto;}
+	#nav{ background: #000000; position: fixed; left: 0px; top: 0px; width: 164px; height: 100%; border-right: 1px solid #383838; text-align: center; padding-top: 35px;}
+	#nav div.nav_cur{ width: 100%; margin-top:50px;}
+	#nav div.nav_cur h2{ width: 100%;}
+	#nav div.nav_cur h2 a{text-decoration: none; color: #f2f2f2; font-family: Segoe UI; font-size: 1.1em; font-weight:normal;}
+	#nav div.nav_cur ul{ width: 100%;}
+	#nav div.nav_cur ul li{ width: 100%; margin-bottom: 2px; position: relative; height: 23px;}
+	#nav div.nav_cur ul li span{ display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF; position: absolute; right: 20px; top: 8px; display: none;}
+	#nav div.nav_cur ul li.active a{color:#e30000;}
+	#nav div.nav_cur ul li.active span{ display: block;}
+	#nav div.nav_cur ul li a{ text-decoration: none; color: #6e8e8c; font-family:  "Arial"; font-size: 1.1em;}
+	#nav div.nav_cur ul li a:hover{ text-decoration: underline;}
+	#nav div.nav_blur{ width: 100%; margin-top: 38px; margin-bottom: 40px;}
+	#nav div.nav_blur ul{}
+	#nav div.nav_blur ul li{ margin-bottom: 5px;}
+	#nav div.nav_blur ul li.active a{ color:#e30000; font-size: 1.5em;}
+	#nav div.nav_blur ul li a{ text-decoration: none; color: #f2f2f2; font-family: Segoe UI; font-size: 1.3em;}
+	#nav div.nav_blur ul li a:hover{ color: #e30000;}
+	#nav p{color: #f2f2f2; font-family: Segoe UI; font-size: 0.8em; margin-top: 10px;}
+	#nav div.nav_contact{ width: 100%; margin-top: 35px;}
+	#nav div.nav_contact ul{}
+	#nav div.nav_contact ul li{ float: left; margin-left: 20px; cursor: pointer; width: 26px; height: 26px;}
+	#nav div.nav_contact ul li.first{ background: url(../img/face.png) no-repeat;}
+	#nav div.nav_contact ul li.first:hover{ background: url(../img/face_active.png) no-repeat;}
+	#nav div.nav_contact ul li.second{ background: url(../img/tum.png) no-repeat;}
+	#nav div.nav_contact ul li.second:hover{ background: url(../img/tum_active.png) no-repeat;}
+	#nav div.nav_contact ul li.third{ background: url(../img/twi.png) no-repeat;}
+	#nav div.nav_contact ul li.third:hover{ background: url(../img/twi_active.png) no-repeat;}
+	#right{ width: 700px; margin-left: 245px; margin-top: 90px;}
+	#right div.right_point{ width: 15px; height:5px; background: #000000; margin-bottom: 60px;}
+	#right h3{ font-size: 4em; font-family:  "Arial"; color: #000000; font-weight: lighter;}
+	#right ul{ width: 900px; height: 60px; margin-top: 30px;}
+	#right ul li{ margin-right: 20px; width: 194px; height: 54px; background: #FFFFFF; border: 3px solid #000000; float: left; line-height: 54px; text-align: center; font-size: 2em; font-family: "Arial"; cursor: pointer;}
+	#right ul li.active{ color: #e30000; border: 3px solid #e30000;}
+	#right>div{ width: 860px; height: 280px; margin-top: 40px;}
+	#progress_left{ width: 120px; float: left;}
+	#progress_left p{ width: 100%; text-align: right; font-size: 1.5em; font-family: "Arial"; height: 60px; line-height: 60px; margin-bottom: 10px;}
+	#progress_right{ float: left;}
+	#progress_right>div{ background: #ccc; height: 60px; margin-bottom: 10px; width: 720px; margin-left: 20px; position: relative; overflow: hidden;}
+	#progress_right>div>div{ width: 100%; height: 60px; position: absolute;left: -720px; background: red;
+	line-height: 60px;}
+	#progress_right>div>span{ position: absolute; left: 10px; font-size: 1.5em; font-family: "Arial"; top: 16px; color: #fff;}
+</style>
+</head>
+
+<body>
+	<div id="nav">
+    	<a href="loading2.html"><img src="../img/logo.png"></a>
+        <div class="nav_cur">
+        	<h2><a href="about_name.html">about</a></h2>
+        </div>
+        <div class="nav_cur" style=" margin-top: 0px;">
+        	<h2><a href="about_name.html">works</a></h2>
+            <ul>
+            	<li><a href="javascript:;">UI design</a><span></span></li>
+            	<li><a href="about_education.html">web design</a><span></span></li>
+            	<li><a href="about_award.html">plane design</a><span></span></li>
+            	<li><a href="about_award.html"></a><span></span></li>
+            </ul>
+        </div>
+        <div class="nav_blur">
+        	<ul>
+            	<li class="active"><a href="javascript:;">skills</a></li>
+            	<li><a href="javascript:;">contact me</a></li>
+            </ul>
+        </div>
+        <p><span><img src="../img/phone.png"></span>:13701756015</p>
+        <p><span><img src="../img/email.png"></span>:649593185@qq.com</p>
+        <div class="nav_contact">
+        	<ul>
+            	<li class="first"></li>
+            	<li class="second"></li>
+            	<li class="third"></li>
+            </ul>
+        </div>
+    </div>
+    <div id="right">
+        <div class="right_point"></div>
+        <h3>ALL SKILLS</h3>
+        <ul id="right_head">
+            <li>PS</li>
+            <li>AI</li>
+            <li>CSS</li>
+            <li>JS</li>
+        </ul>
+        <div>
+        	<div id="progress_left">
+            	<p>photoshop:</p>
+            	<p>illustrator:</p>
+            	<p>div+css:</p>
+            	<p>javascript:</p>
+            </div>
+            <div id="progress_right">
+            	<div>
+                	<div></div>
+                    <span>0%</span>
+                </div>
+            	<div>
+                	<div></div>
+                    <span>0%</span>
+                </div>
+            	<div>
+                	<div></div>
+                    <span>0%</span>
+                </div>
+            	<div>
+                	<div></div>
+                    <span>0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/move2.js"></script>
+<script>
+	window.onload=function(){
+		var oRightHead=document.getElementById('right_head');
+		var aLi=oRightHead.children;
+		//alert(aLi.length)
+		var oProdressRight=document.getElementById('progress_right');
+		var aDivPar=oProdressRight.children;
+		//alert(aDivPar[0].innerHTML)
+		var ready=true;
+		for(var i=0;i<aLi.length;i++){
+			(function(index){
+				aLi[i].onclick=function(){
+					//alert(aDivPar[index])
+					var oDiv=aDivPar[index].children[0];
+					this.className=this.className? '':'active';
+					//alert(index)
+					//alert(oDiv.offsetWidth)
+					if(index==0 && aLi[index].className=='active'){
+						program(oDiv,-100,1000);
+					}else if(aLi[index].className==''){
+						program(oDiv,-720,1000);
+					}
+					if(index==1 && aLi[index].className=='active'){
+						program(oDiv,-200,1000);
+					}else if(aLi[index].className==''){
+						program(oDiv,-720,1000);
+					}
+					if(index==2 && aLi[index].className=='active'){
+						program(oDiv,-150,1000);
+					}else if(aLi[index].className==''){
+						program(oDiv,-720,1000);
+					}
+					if(index==3 && aLi[index].className=='active'){
+						program(oDiv,-120,1000);
+					}else if(aLi[index].className==''){
+						program(oDiv,-720,1000);
+					}
+					//program(oDiv,-100,1000)
+				}
+			})(i);
+		}
+		
+		function program(obj,iTarget,time){
+			var start=obj.offsetLeft;
+			var dis=iTarget-start;
+			var count=Math.round(time/30);
+			var n=0;
+			var timer=setInterval(function(){
+				n++;
+				var a=1-n/count;
+				obj.style.left=start+dis*(1-a*a*a)+'px';
+				var oSpan=obj.parentNode.children[1]
+				oSpan.innerHTML=Math.abs((parseInt((1+obj.offsetLeft/obj.parentNode.offsetWidth)*100)))+'%';
+				if(n==count){
+					clearInterval(timer)
+				}
+			},30)	
+		}
+		
+		
+		
+	}
+</script>
+</html>
