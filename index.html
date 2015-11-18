@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>loading</title>
 <style>
 	*{ margin: 0px; padding: 0px; list-style: none;}
-	body{ background: url(../img/loading_bg.jpg) no-repeat; background-size: cover;}
-	#div1{ width: 300px; height: 200px; background: url(../img/load.png) no-repeat; position: absolute; left:50%; margin-left: -150px; top: 50%; margin-top: -100px; cursor: pointer;}
+	body{ background: url(img/loading_bg.jpg) no-repeat; background-size: cover;}
+	#div1{ width: 300px; height: 200px; background: url(img/load.png) no-repeat; position: absolute; left:50%; margin-left: -150px; top: 50%; margin-top: -100px; cursor: pointer;}
 	#div1 div.left{ width: 300px; height: 200px; position: absolute; left: 0px; top: 0px;}
 	#div1 div.right{ width: 300px; height: 200px; position: absolute; left: 0px; top: 0px;}
 </style>
@@ -14,11 +14,11 @@
 
 <body>
 <div id="div1">
-	<div class="left"><img src="../img/load_left.png"></div>
-    <div class="right"><img src="../img/load_right.png"></div>
+	<div class="left"><img src="img/load_left.png"></div>
+    <div class="right"><img src="img/load_right.png"></div>
 </div>
 </body>
-<script src="../js/move.js"></script>
+<script src="js/move.js"></script>
 <script>
 	window.onload=function(){
 		var oDiv=document.getElementById('div1');
@@ -27,7 +27,7 @@
 		
 		oDiv.onclick=function(){
 			//file:///F:/%E6%99%BA%E8%83%BD%E7%A4%BE/text/loading2.html
-			window.location='about_name.html';
+			window.location='html/about_name.html';
 		}
 		
 		var arr=[
