@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=320,initial-scale=1,user-scalable=no"/>
+<title>无标题文档</title>
+<style>
+	*{ margin: 0px; padding: 0px; list-style: none; border: none;}
+	html{ font-size: 20px;}
+	.title{ width: 16rem; height: 2.5rem; background: -webkit-linear-gradient(#fff,#ebebeb); overflow: hidden;}
+	.title div{ float: left;}
+	.title .back{ width: 3.25rem; height: 1.6rem; margin-left: 0.375rem; margin-top: 0.45rem;}
+	.title .back img{ width: 100%; height: 100%;}
+	.title .title_name{ margin-top: 0.15rem; margin-left: -0.325rem; width: 9.4rem; height: 2.2rem;}
+	.title .title_name img{ width: 100%; height: 100%;}
+	.banner{ width: 16rem; height: 6.65rem; position: relative;}
+	.banner ul{ position: absolute; left: 0px; top: 0px;}
+	.banner ul li{ float: left; width: 16rem; height: 6.65rem;}
+	.banner ul li img{ width: 100%; height: 100%;}
+	.change{ width: 2.25rem; height: 0.25rem; margin-left: 6.875rem; margin-top: 0.5rem;}
+	.change ol{ width: 2.25rem; height: 0.25rem;}
+	.change ol li{ background: #ccc; float: left; width: 0.25rem; height: 0.25rem; margin-right: 0.25rem; border-radius: 50%;}
+	.change ol li:nth-last-child(1){ margin-right: 0px;}
+	.change ol li.active{ background: #f40;}
+	.menu{ width: 16rem; height: 7rem; margin-top: 0.5rem; margin-bottom: 1.65rem;}
+	.menu ul{ width: 16rem; height: 3rem;}
+	.menu ul:first-child{ margin-bottom: 1rem;}
+	.menu ul li:first-child{ margin-left: 1.3rem;}
+	.menu ul li{ float: left; width: 2rem; height: 3rem; margin-right: 1.8rem;}
+	.menu ul li:nth-last-child(1){ margin-right: 0px;}
+	.menu ul li img{ width: 100%; height: 100%;}
+	.show{ width: 15rem; height: auto; margin: 0 auto;}
+	.show .show_title{ width: 100%; height: 0.7rem;}
+	.show .show_title div{ float: left;}
+	.show .show_title .show_first{ background: #d51938; width: 0.1rem; height: 0.7rem; margin-right: 0.45rem;}
+	.show .show_title .show_second{ font-family: "方正兰亭黑简体"; font-size: 0.7rem; width: 5rem; height: 0.7rem; line-height: 0.7rem; text-align: center;}
+	.show .show_title .show_third{ font-family: "方正兰亭黑简体"; font-size: 0.7rem; float: right; width: 2.5rem; height: 0.7rem; line-height: 0.7rem; text-align: center;}
+	.show .show_box{ width: 100%; height: 0.1rem; background:  #dcdcdc; margin: 0px auto; margin-top: 0.55rem; margin-bottom: 0.775rem;}
+	.show .show_product{ width: 100%; height: 35rem;}
+	.show .show_product ul{ width: 100%; height: 100%;}
+	.show .show_product ul li{ width: 100%; height: 3rem; margin-bottom: 0.5rem; background: #f4f4f4;}
+	.show .show_product ul li div{ float: left;}
+	.show .show_product ul li .product_first{ background: #e00202; width: 1.5rem; height: 100%; line-height: 3rem; text-align: center; font-size: 1.2rem; font-weight: bold; font-family:  "Arial"; color: #fff;}
+	.show .show_product ul li .product_second{ width: 4.5rem; height: 3rem;}
+	.show .show_product ul li .product_second img{ width: 100%; height: 100%;}
+	.show .show_product ul li .product_third{ padding-top: 0.75rem; height: 2.25rem; width: 4rem; margin-left: 0.55rem;}
+	.show .show_product ul li .product_third p{ font-size: 0.5rem; font-family:  "Arial"; font-weight: bold; color: #999;}
+	.show .show_product ul li .product_third p:first-child{ margin-bottom: 0.35rem;}
+	.show .show_product ul li .product_third p span{ color: red; font-weight: bold;}
+	.show .show_product ul li .product_fourth{ width: 3.5rem; height: 3rem; float: right; font-size: 0.8rem; line-height: 3rem; color: #d51938; font-family:  "Arial"; font-weight: bold;}
+	.show .show_product ul li .product_fourth span{ margin-left: 0.1rem; display: inline-block; width: 1rem; height: 1rem;}
+	.show .show_product ul li .product_fourth span img{ width: 100%; height: 100%; vertical-align: middle;}
+	.footer{ width: 15rem; height: auto; margin: 0px auto;}
+	.footer .footer_list{ width: 100%; height: 11.3rem; margin-bottom: 1rem;}
+	.footer .footer_list .footer_top{ width: 100%; background: #f5f5f5; height: 2rem; line-height: 2rem; text-align: center; font-size: 0.7rem; color: #666666; font-family: "方正兰亭黑简体"; margin-bottom: 1rem; }
+	.footer .footer_list .footer_middle{ width: 100%; height: 8.8rem;}
+	.footer .footer_list .footer_middle .footer_left{ width: 3.75rem; height: 100%; float: left;}
+	.footer .footer_list .footer_middle .footer_left img{ width: 100%; height: 100%;}
+	.footer .footer_list .footer_middle .footer_right{ width: 11.25rem; height: 100%; float: right;}
+	.footer .footer_list .footer_middle .footer_right ul{ width: 100%; height: 8.775rem; border-bottom:  0.025rem solid #eeeeee;}
+	.footer .footer_list .footer_middle .footer_right ul li{ float: left; width: 3.725rem; height: 2.175rem; border-top: 0.025rem solid #eeeeee; border-right: 0.025rem solid #eeeeee; line-height: 2.175rem; text-align: center; font-size: 0.7rem; font-family: "方正兰亭黑简体";}
+	.footer .footer_list .footer_middle .footer_right ul li.cur{ color: #d51942;}
+	.footer .footer_list .footer_bottom{ width: 100%; height: 4rem;}
+	.footer .footer_list .footer_bottom img{ width: 100%; height: 100%;}
+</style>
+<script>
+	window.onresize=function(){
+		document.documentElement.style.fontSize=20/320*document.documentElement.clientWidth+"px";
+	}
+</script>
+</head>
+
+<body>
+<div class="title">
+	<div class="back"><img src="images/back.png"/></div>
+	<div class="title_name"><img src="images/title.png"/></div>
+</div>
+<div class="banner">
+	<ul>
+    	<li><img src="images/banner.png"/></li>
+    </ul>
+</div>
+<div class="change">
+	<ol>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li class="active"></li>
+    </ol>
+</div>
+<div class="menu">
+	<div class="menu_top">
+    	<ul>
+        	<li><img src="images/product.png"/></li>
+        	<li><img src="images/life.png"/></li>
+        	<li><img src="images/pinpai.png"/></li>
+        	<li><img src="images/bao.png"/></li>
+        </ul>
+    </div>
+	<div class="menu_top">
+    	<ul>
+        	<li><img src="images/juming.png"/></li>
+        	<li><img src="images/jujia.png"/></li>
+        	<li><img src="images/jutou.png"/></li>
+        	<li><img src="images/kehu.png"/></li>
+        </ul>
+    </div>
+</div>
+<div class="show">
+    <div class="show_title">
+    	<div class="show_first"></div>
+    	<div class="show_second">聚划算热卖排行</div>
+    	<div class="show_third">TOP10</div>
+    </div>
+    <div class="show_box"></div>
+    <div class="show_product">
+    	<ul>
+        	<li>
+            	<div class="product_first">1</div>
+            	<div class="product_second"><img src="images/pic1.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">2</div>
+            	<div class="product_second"><img src="images/pic2.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">3</div>
+            	<div class="product_second"><img src="images/pic3.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥289<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">4</div>
+            	<div class="product_second"><img src="images/pic4.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">5</div>
+            	<div class="product_second"><img src="images/pic5.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">6</div>
+            	<div class="product_second"><img src="images/pic6.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">7</div>
+            	<div class="product_second"><img src="images/pic7.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">8</div>
+            	<div class="product_second"><img src="images/pic8.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">9</div>
+            	<div class="product_second"><img src="images/pic9.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        	<li>
+            	<div class="product_first">10</div>
+            	<div class="product_second"><img src="images/pic10.png"/></div>
+            	<div class="product_third">
+                	<p>已售 68423</p>
+                	<p><span>2.3</span>折   &nbsp;  ￥299</p>
+                </div>
+            	<div class="product_fourth">￥51<span><img src="images/bg.png"/></span></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="footer">
+	<div class="footer_list">
+    	<div class="footer_top">更多划算  逛起来！</div>
+    	<div class="footer_middle">
+        	<div class="footer_left"><img src="images/left.png"/></div>
+        	<div class="footer_right">
+            	<ul>
+                	<li class="cur">服饰</li>
+                	<li>配饰</li>
+                	<li>美妆</li>
+                	<li>鞋包</li>
+                	<li>食品</li>
+                	<li class="cur">家居</li>
+                	<li>运动</li>
+                	<li class="cur">电器</li>
+                	<li>百货</li>
+                	<li>母婴</li>
+                	<li>数码</li>
+                	<li>更多</li>
+                </ul>
+            </div>
+        </div>
+   	</div>
+	<div class="footer_list">
+    	<div class="footer_top">精彩商品  逛起来！</div>
+    	<div class="footer_middle">
+        	<div class="footer_left"><img src="images/left2.png"/></div>
+        	<div class="footer_right">
+            	<ul>
+                	<li class="cur">美食</li>
+                	<li>教育</li>
+                	<li>酒店</li>
+                	<li>电影</li>
+                	<li>生活服务</li>
+                	<li class="cur">卡券</li>
+                	<li>摄影</li>
+                	<li class="cur">粮油生鲜</li>
+                	<li>门票</li>
+                	<li>休闲娱乐</li>
+                	<li></li>
+                	<li></li>
+                </ul>
+            </div>
+        </div>
+   	</div>
+	<div class="footer_list">
+    	<div class="footer_top">品质生活  逛起来！</div>
+    	<div class="footer_middle">
+        	<div class="footer_left"><img src="images/left3.png"/></div>
+        	<div class="footer_right">
+            	<ul>
+                	<li>七匹狼</li>
+                	<li class="cur">粉红女...</li>
+                	<li>卓诗尼</li>
+                	<li class="cur">收纳博士</li>
+                	<li>惠氏</li>
+                	<li>夏乐</li>
+                	<li>帕克伦</li>
+                	<li>古今</li>
+                	<li class="cur">九牧</li>
+                	<li>诺奥</li>
+                	<li>红豆</li>
+                	<li>曼秀雷敦</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	<div class="footer_list">
+    	<div class="footer_top">品牌折扣  逛起来！</div>
+        <div class="footer_bottom"><img src="images/footer.png"/></div>
+   	</div>
+</div>
+</body>
+</html>

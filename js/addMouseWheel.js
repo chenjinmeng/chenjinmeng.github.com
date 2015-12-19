@@ -19,7 +19,7 @@ function addMouseWheel(obj,fn){
 		}
 		//console.log(down)
 		
-		fn && fn(down);
+		fn(down);
 		
 		oEvt.preventDefault && oEvt.preventDefault();
 		return  false;

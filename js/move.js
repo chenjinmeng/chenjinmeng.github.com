@@ -1,12 +1,12 @@
 //版权 北京智能社©, 保留所有权利
 
 //'完美'运动
-function move(obj,json,opational){
+function startMove(obj,json,opational){
 	//var opational={time:500};	var opational;
 	opational=opational||{};
-	opational.time=opational.time||400;
+	opational.time=opational.time||300;
 	opational.fn=opational.fn||null;
-	opational.type=opational.type||'ease-out';
+	opational.type=opational.type||'linear';
 	
 	var start={};//准备一个空start用来存储一堆初始值
 	var dis={};//准备一个空dis用来存储一堆运动距离
@@ -59,12 +59,10 @@ function move(obj,json,opational){
 		
 		if(n==count){//停止条件
 			clearInterval(obj.timer);
-			console.timeEnd('go');
+			//console.timeEnd('go');
 			opational.fn && opational.fn();	//回调函数存在(用户传了函数)，再去调用
 		}
 	},30);
-	
-		
 }
 function getStyle(obj,attr){
 	return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];	

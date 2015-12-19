@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	* { padding: 0; margin: 0; }
+	li { list-style: none; }
+	img { border: none; }
+	
+	body { background: #ecfaff; }
+	
+	.box { width: 470px; height: 150px; overflow: hidden; position: relative; margin: 150px auto 0; background: #ccc; }
+	.box ol { position: absolute; left: 200px; bottom: 5px; z-index: 2; }
+	.box ol li { float: left; margin-right: 3px; display: inline; cursor: pointer; background: #fcf2cf; border: 1px solid #f47500; padding: 2px 6px; color: #d94b01; font-family: arial; font-size: 12px; }
+	.box .active { padding: 3px 8px; font-weight: bold; color: #ffffff; background: #ffb442; position: relative; bottom: 2px; }
+	
+	.box ul { position: absolute; top: 0; left: 0; z-index: 1; }
+	.box ul li { width: 470px; height: 150px; float: left; }
+	.box ul img { float: left; width: 470px; height: 150px; }
+	
+	.box p { width: 20px; height: 20px; line-height: 20px; font-family: arial; color: #fff; text-align: center; font-weight: bold; background: #333; border: 1px solid #ccc; position: absolute; top: 60px; z-index: 2; cursor: pointer; }
+	.box .prev { left: 10px; }
+	.box .next { right: 10px; }
+</style>
+</head>
+
+<body>
+	<div id="play" class="box">
+    	<p class="prev">&laquo;</p>
+        <p class="next">&raquo;</p>
+        <ol>
+        	<li class="active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        	<li>5</li>
+        </ol>
+        <ul>
+        	<li><a href="javascript:;"><img src="images/1.jpg"></a></li>
+        	<li><a href="javascript:;"><img src="images/2.jpg"></a></li>
+        	<li><a href="javascript:;"><img src="images/3.jpg"></a></li>
+        	<li><a href="javascript:;"><img src="images/4.jpg"></a></li>
+        	<li><a href="javascript:;"><img src="images/5.jpg"></a></li>
+        </ul>
+    </div>
+</body>
+<script src="move.js"></script>
+<script>
+	window.onload=function(){
+		var oPlay=document.getElementById('play');
+		var oCardHead=oPlay.children[2];
+		var aCardHead=oCardHead.children;
+		var oCardBody=oPlay.children[3];
+		var aCardLi=oCardBody.children;
+		var oPrev=oPlay.getElementsByClassName('prev')[0];
+		var oNext=oPlay.getElementsByClassName('next')[0];
+		var ready=false;
+		var now=0;
+		var oldLength=aCardLi.length;
+		oCardBody.innerHTML+=oCardBody.innerHTML;
+		oCardBody.style.width=aCardLi[0].offsetWidth*aCardLi.length+'px';
+		
+		
+		for(var i=0;i<aCardHead.length;i++){
+			//aCardHead[i].index=i;
+			(function(index){
+				aCardHead[i].onclick=function(){
+					now=index;
+					tab();
+				}
+			})(i);
+		}
+		
+		function tab(){
+			for(var i=0;i<aCardHead.length;i++){
+				aCardHead[i].className='';	
+			}
+			if(now==oldLength){
+				aCardHead[0].className='active';	
+			}else{
+				aCardHead[now].className='active';	
+			}
+			ready=true;
+			//oCardBody.style.left=-now*aCardLi[0].offsetWidth+'px';
+			move(oCardBody,{left:-now*aCardLi[0].offsetWidth},{fn:function(){
+				ready=false;
+				//alert('abc');
+				console.log(now)
+				if(now==oldLength){
+					oCardBody.style.left=0;
+					now=0	
+				}	
+			}})
+		}
+		
+		function next(){
+			now++;
+			tab();	
+		}
+		
+		var timer=setInterval(function(){
+				oNext.onclick();
+		},2000);
+		
+		oPlay.onmouseover=function(){
+			clearInterval(timer)	
+		};
+		oPlay.onmouseout=function(){
+			timer=setInterval(function(){
+					oNext.onclick();
+			},2000)
+		};
+		
+		oNext.onclick=function(){
+			if(ready) return;
+			next();	
+		};
+		
+		oPrev.onclick=function(){
+			if(ready) return; 
+			if(now==0){
+				oCardBody.style.left=-oCardBody.offsetWidth/2+'px';
+				now=oldLength-1;
+			}else{
+				now--;	
+			}
+			tab();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*		
+		var now=0;
+		var oldLength=aCardLi.length;
+		oCardBody.innerHTML+=oCardBody.innerHTML;
+		oCardBody.style.width=aCardLi[0].offsetWidth*aCardLi.length+'px';
+		//1.选项卡	oCardBody.left=-li.w*index
+		for(var i=0;i<aCardHead.length;i++){
+			(function(index){
+				aCardHead[i].onclick=function(){
+					now=index;//更新now
+					tab();
+				};
+			})(i);	
+		}
+		function tab(){
+			for(var i=0;i<aCardHead.length;i++){
+				aCardHead[i].className='';	
+			}
+			if(now==oldLength){
+				aCardHead[0].className='active';	
+			}else{
+				aCardHead[now].className='active';	
+			}
+			move(oCardBody,{left:-aCardLi[0].offsetWidth*now},{time:1000,fn:function(){
+				//console.log(now)
+				alert('abc')
+				if(now==oldLength){
+					//归位
+					oCardBody.style.left=0;
+					now=0;	
+				}
+			}});
+		}
+		function next(){
+			now++;
+			//if(now==5) now=0;		//5==aCardHead.length
+			tab();	
+		}
+		
+		var timer=setInterval(next,2000);
+		oPlay.onmouseover=function(){
+			clearInterval(timer);	
+		};
+		oPlay.onmouseout=function(){
+			timer=setInterval(next,2000);	
+		};
+		
+		oNext.onclick=next;
+		oPrev.onclick=function(){
+			
+			if(now==0){
+				//归位
+				now=oldLength-1	//length-1
+				oCardBody.style.left=-oCardBody.offsetWidth/2+'px';	
+			}else{
+				now--;	
+			}
+			tab();	//动
+		};
+		
+		
+*/		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+</script>
+</html>
