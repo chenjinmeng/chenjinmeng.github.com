@@ -200,9 +200,10 @@
 		
 		//文字闪烁
 		var timer4=setInterval(function(){
+			opacityTo(aLi[iNow]);
 			iNow++;
 			iNow%=3;
-			opacityTo(aLi[iNow]);
+			
 		},3000)
 		//alert(aLi.length);
 		
@@ -236,10 +237,12 @@
 			startMove(oIndexTop,{top:0},{time:1000});
 			d=0;
 			clearInterval(timer);
+			iNow=0;
 			timer4=setInterval(function(){
+				opacityTo(aLi[iNow]);
 				iNow++;
 				iNow%=3;
-				opacityTo(aLi[iNow]);
+				//console.log(iNow);
 			},3000)
 		};
 		NoStopMove();
@@ -353,7 +356,6 @@
 		}
 		//在oWork上鼠标滚动的时候，做的啥？
 		addMouseWheel(oWork,function(down){
-			iNow=0;
 			if(!down && oWork.offsetTop==0){
 				downNav();
 			}else if(down && oWork.offsetTop>-2800){
@@ -384,8 +386,8 @@
 		});
 		//透明度的变化
 		function opacityTo(obj){
-			startMove(obj,{opacity:1},{time:1500,fn:function(){
-				startMove(obj,{opacity:0},{time:1500});
+			startMove(obj,{opacity:1},{time:1000,fn:function(){
+				startMove(obj,{opacity:0},{time:1000});
 			}});
 		}
 	}
