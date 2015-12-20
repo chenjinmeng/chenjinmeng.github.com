@@ -112,6 +112,7 @@
 		var timer=null;
 		var d=0;
 		var ready=true;
+		var readyTow=true;
 		var iNowTab=0;
 		oIndexTop.style.height=IndexHeight-30+"px";
 		oMiddle.style.height=IndexHeight-127-30-30+"px";
@@ -203,8 +204,7 @@
 			opacityTo(aLi[iNow]);
 			iNow++;
 			iNow%=3;
-			
-		},3000)
+		},3000);
 		//alert(aLi.length);
 		
 		function up(){
@@ -217,7 +217,6 @@
 				move(oNav,{top:0},{type:Tween.Bounce.easeOut,time:1000});
 				ready=true;	
 			}});
-			iNow=0;
 			oNav.style.position="fixed";
 			arcYuan("c1","2",150,140,70,280);
 			arcYuan("c2","2",150,140,70,360);
@@ -237,12 +236,12 @@
 			startMove(oIndexTop,{top:0},{time:1000});
 			d=0;
 			clearInterval(timer);
-			iNow=0;
+			clearInterval(timer4);
 			timer4=setInterval(function(){
 				opacityTo(aLi[iNow]);
 				iNow++;
 				iNow%=3;
-				//console.log(iNow);
+				console.log(iNow);
 			},3000)
 		};
 		NoStopMove();
