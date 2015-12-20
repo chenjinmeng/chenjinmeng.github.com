@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
 <head>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico.png"/>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>孟陈进-前端开发工程师</title>
 <style>
 	*{ margin: 0px; padding: 0px; list-style: none;}
 	html{ overflow: hidden;}
@@ -110,6 +111,7 @@
 		var bReady=true;
 		var timer=null;
 		var d=0;
+		var ready=true;
 		var iNowTab=0;
 		oIndexTop.style.height=IndexHeight-30+"px";
 		oMiddle.style.height=IndexHeight-127-30-30+"px";
@@ -198,21 +200,31 @@
 		
 		//文字闪烁
 		var timer4=setInterval(function(){
-			opacityTo(aLi[iNow]);
 			iNow++;
 			iNow%=3;
-		},2000)
+			opacityTo(aLi[iNow]);
+		},3000)
 		//alert(aLi.length);
 		
 		function up(){
+			if(!ready){
+				return;
+			}
+			ready=false;
 			startMove(oIndexTop,{top:-IndexHeight},{time:1000})
-			startMove(oWork,{top:0},{time:1000});
-			move(oNav,{top:0},{type:Tween.Bounce.easeOut,time:500});
+			startMove(oWork,{top:0},{time:1000,fn:function(){
+				move(oNav,{top:0},{type:Tween.Bounce.easeOut,time:1000});
+				ready=true;	
+			}});
+			iNow=0;
 			oNav.style.position="fixed";
 			arcYuan("c1","2",150,140,70,280);
 			arcYuan("c2","2",150,140,70,360);
 			timer=setInterval(function(){
 				d++;
+				if(d==360){
+					d=0;
+				}
 				oZhuanBg.style.transform="rotate("+d+"deg)"	;
 			},5)
 			clearInterval(timer4);
@@ -225,10 +237,10 @@
 			d=0;
 			clearInterval(timer);
 			timer4=setInterval(function(){
-				opacityTo(aLi[iNow]);
 				iNow++;
 				iNow%=3;
-			},2000)
+				opacityTo(aLi[iNow]);
+			},3000)
 		};
 		NoStopMove();
 		//箭头无限运动(上下)
@@ -341,6 +353,7 @@
 		}
 		//在oWork上鼠标滚动的时候，做的啥？
 		addMouseWheel(oWork,function(down){
+			iNow=0;
 			if(!down && oWork.offsetTop==0){
 				downNav();
 			}else if(down && oWork.offsetTop>-2800){
@@ -353,8 +366,8 @@
 					bReady=true;	
 				}});
 				iNowH=iNowH-200;
-				console.log(oWork.offsetTop);
-				console.log(iNowH);
+				//console.log(oWork.offsetTop);
+				//console.log(iNowH);
 			}else if(!down && oWork.offsetTop<0){
 				if(!bReady){
 					return;	
@@ -365,14 +378,14 @@
 					bReady=true;	
 				}});
 				iNowH=iNowH+200;
-				console.log(oWork.offsetTop);
-				console.log(iNowH);
+				//console.log(oWork.offsetTop);
+				//console.log(iNowH);
 			}
 		});
 		//透明度的变化
 		function opacityTo(obj){
-			startMove(obj,{opacity:1},{time:1000,fn:function(){
-				startMove(obj,{opacity:0},{time:1000});
+			startMove(obj,{opacity:1},{time:1500,fn:function(){
+				startMove(obj,{opacity:0},{time:1500});
 			}});
 		}
 	}
@@ -451,9 +464,9 @@
         <div class="work_show">作品展示</div>
         <div id="work_tab">
               <ul>
-                  <li><a href="javacsript:;"><img src="img/tab1.jpg"></a></li>
-                  <li><a href="javacsript:;"><img src="img/tab2.jpg"></a></li>
-                  <li><a href="javacsript:;"><img src="img/tab3.jpg"></a></li>
+                  <li><a href="Buick.html" target="_blank"><img src="img/tab1.jpg"></a></li>
+                  <li><a href="Ford.html" target="_blank"><img src="img/tab2.jpg"></a></li>
+                  <li><a href="IKEA.html" target="_blank"><img src="img/tab3.jpg"></a></li>
               </ul>
               <ol>
                   <li class="active"></li>
