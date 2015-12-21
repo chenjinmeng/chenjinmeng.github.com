@@ -108,6 +108,38 @@
 		var aWorkListA=oWorkList.getElementsByTagName("a");
 		var IndexHeight=document.documentElement.clientHeight;
 		//alert(IndexHeight);
+		if(IndexHeight>800){
+			NoStopMove();
+			//箭头无限运动(上下)
+			function NoStopMove(){
+				startMove(oMidMove,{top:205},{fn:function(){
+					startMove(oMidMove,{top:225},{fn:function(){
+						startMove(oMidMove,{top:245},{fn:function(){
+							startMove(oMidMove,{top:225},{fn:function(){
+								NoStopMove();	
+							}})
+						}})	
+					}});	
+				}})
+			}
+		}else{
+			oMidMove.style.marginTop="437px";
+			
+			NoStopMove();
+			//箭头无限运动(上下);
+			
+			function NoStopMove(){
+				startMove(oMidMove,{top:517},{fn:function(){
+					startMove(oMidMove,{top:537},{fn:function(){
+						startMove(oMidMove,{top:557},{fn:function(){
+							startMove(oMidMove,{top:537},{fn:function(){
+								NoStopMove();	
+							}})
+						}})	
+					}});	
+				}})
+			}
+		}
 		var iNow=0;
 		var iNowH=0;
 		var bReady=true;
@@ -260,19 +292,6 @@
 				iNow%=3;
 			},3000)
 		};
-		NoStopMove();
-		//箭头无限运动(上下)
-		function NoStopMove(){
-			startMove(oMidMove,{top:205},{fn:function(){
-				startMove(oMidMove,{top:225},{fn:function(){
-					startMove(oMidMove,{top:245},{fn:function(){
-						startMove(oMidMove,{top:225},{fn:function(){
-							NoStopMove();	
-						}})
-					}})	
-				}});	
-			}})
-		}
 		
 		oMidMove.onclick=function(){
 			up();	
