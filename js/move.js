@@ -1,4 +1,4 @@
-//版权 北京智能社©, 保留所有权利
+
 
 //'完美'运动
 function startMove(obj,json,opational){

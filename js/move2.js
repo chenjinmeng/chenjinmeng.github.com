@@ -1,4 +1,4 @@
-//版权 北京智能社©, 保留所有权利
+
 function getStyle(obj,name){
 	return (obj.currentStyle||getComputedStyle(obj,null))[name];
 }
