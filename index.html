@@ -108,9 +108,10 @@
 		var aWorkListA=oWorkList.getElementsByTagName("a");
 		var IndexHeight=document.documentElement.clientHeight;
 		//alert(IndexHeight);
-		if(IndexHeight>800){
+		if(IndexHeight<800){
 			NoStopMove();
 			//箭头无限运动(上下)
+			//alert(1);
 			function NoStopMove(){
 				startMove(oMidMove,{top:205},{fn:function(){
 					startMove(oMidMove,{top:225},{fn:function(){
@@ -124,11 +125,11 @@
 			}
 		}else{
 			oMidMove.style.marginTop="437px";
-			
-			NoStopMove();
+			//alert(1);
+			NoStopMove2();
 			//箭头无限运动(上下);
 			
-			function NoStopMove(){
+			function NoStopMove2(){
 				startMove(oMidMove,{top:517},{fn:function(){
 					startMove(oMidMove,{top:537},{fn:function(){
 						startMove(oMidMove,{top:557},{fn:function(){
