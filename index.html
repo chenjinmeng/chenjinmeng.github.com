@@ -109,7 +109,6 @@
 		var IndexHeight=document.documentElement.clientHeight;
 		//alert(IndexHeight);
 		if(IndexHeight<800){
-			NoStopMove();
 			//箭头无限运动(上下)
 			//alert(1);
 			function NoStopMove(){
@@ -123,6 +122,7 @@
 					}});	
 				}})
 			}
+			NoStopMove();
 		}else{
 			oMidMove.style.marginTop="437px";
 			//alert(1);
@@ -162,6 +162,7 @@
 		oWorkUl.innerHTML+=oWorkUl.innerHTML;
 		oWorkUl.style.width=aWorkLi.length*aWorkLi[0].offsetWidth+"px";
 		var now=0;
+		clearInterval(timer2);
 		var timer2=setInterval(function(){
 			now++;
 			startMove(oWorkUl,{left:-now*aWorkLi[0].offsetWidth},{fn:function(){
@@ -240,12 +241,19 @@
 		}
 		
 		//文字闪烁
+		clearInterval(timer4);
 		var timer4=setInterval(function(){
 			opacityTo(aLi[iNow]);
 			iNow++;
 			iNow%=3;
-		},3000);
+		},2000);
 		//alert(aLi.length);
+		function opacityTo(obj){
+			startMove(obj,{opacity:1},{time:1300,fn:function(){
+				startMove(obj,{opacity:0},{time:700});
+			}});
+		}
+		
 		
 		function up(){
 			if(!ready){
@@ -261,7 +269,7 @@
 				ready=true;	
 			}});
 			oNav.style.position="fixed";
-			console.log(1);
+			//console.log(1);
 			arcYuan("c1","2",150,140,70,280);
 			arcYuan("c2","2",150,140,70,360);
 			timer=setInterval(function(){
@@ -291,7 +299,7 @@
 				opacityTo(aLi[iNow]);
 				iNow++;
 				iNow%=3;
-			},3000)
+			},2000)
 		};
 		
 		oMidMove.onclick=function(){
@@ -424,11 +432,6 @@
 			}
 		});
 		//透明度的变化
-		function opacityTo(obj){
-			startMove(obj,{opacity:1},{time:1000,fn:function(){
-				startMove(obj,{opacity:0},{time:1000});
-			}});
-		}
 	}
 </script>
 <body>
@@ -436,7 +439,7 @@
         <div class="top"><img src="img/logo.png"></div>
         <div class="middle">
             <ul>
-                <li>熟练掌握前端技术：DIV+CSS HTML JS</li>
+                <li class="active">熟练掌握前端技术：DIV+CSS HTML JS</li>
                 <li>学习能力强, 有美术基础, 设计经验</li>
                 <li>抗压能力强，可适应适当的加班</li>
             </ul>
